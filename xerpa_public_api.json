@@ -2,7 +2,7 @@
   "name": "Xerpa Public API",
   "version": "1.0.0",
   "description": "Xerpa Public GraphQL API",
-  "homepage": "https://api.xerpa.com.br/docs",
+  "homepage": "http://developers.xerpa.com.br",
   "dependencies": {
     "@2fd/command": "^1.1.2",
     "@types/jest": "^18.1.0",
@@ -15,9 +15,9 @@
   },
   "graphdoc": {
     "graphiql": "https://api.xerpa.com.br/api/public/explorer",
-    "logo": "<a href=\"https://docs.xerpa.com.br\" style=\"display:block;padding:1rem 3rem\"><img src=\"https://d9hhrg4mnvzow.cloudfront.net/www.xerpa.com.br/70cc2dd1-logo-xerpa-black_04900q04900q000000.png\" /></a>",
+    "logo": "<a href=\"http://developers.xerpa.com.br\" style=\"display:block;padding:1rem 3rem\"><img src=\"https://d9hhrg4mnvzow.cloudfront.net/www.xerpa.com.br/70cc2dd1-logo-xerpa-black_04900q04900q000000.png\" /></a>",
     "endpoint": "https://api.xerpa.com.br/api/public",
-    "output": "./docs",
+    "output": "./docs/schema",
     "baseUrl": "./"
   }
 }
