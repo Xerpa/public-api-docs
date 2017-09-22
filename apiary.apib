@@ -1,0 +1,220 @@
+FORMAT: 1A
+HOST: https://api.xerpa.com.br/
+
+# Xerpa API
+
+This is Xerpa API documentation. Here you will find the guidelines for getting started with the API.
+
+# GraphQL
+
+GraphQL is a query language for APIs created by Facebook in 2012.
+
+**Refs**:
+* [facebook.github.io/graphql](http://facebook.github.io/graphql/)
+* [graphql.org](http://graphql.org/)
+
+Features:
+* Send a GraphQL query to the API and get exactly what you need, nothing more and nothing less. GraphQL queries always return predictable results. 
+* GraphQL queries access not just the properties of one resource but also smoothly follow references between them. While typical REST APIs require loading from multiple URLs, GraphQL APIs get all the data your app needs in a single request.
+
+# Authentication
+
+All requests will require the Xerpa token, that must be sent in the request header.
+
+The **personal access token** can be found at the **Company Settings** page in [Xerpa](https://app.xerpa.com.br/)
+
+|    HTTP Header    |              Header Value             |
+|-------------------|---------------------------------------|
+| **Content-Type**  | _application/json_                    |
+| **Authorization** | _xerpa-token <company_access_token>_ |
+
+
+## Invite [/api/public]
+
+Invite employee.
+
+**Request Body**
+```
+{
+"query": "mutation ($input : InviteInput!) {
+  inviteProfiles(input: $input) {
+    id
+    name
+    admissionDate
+    invite {
+      status
+    }
+    onboarding {
+      progress {
+        completed
+        total
+      }
+    }
+  }
+}",
+"variables": 
+{
+  "input":
+  {
+    "profiles": [
+      {
+        "admissionDate": "2010-10-10",
+        "email": "fulano@da.silva",
+        "employmentContract": "APPRENTICE",
+        "name": "Carinha Novo"
+      }
+    ]
+  }
+}
+}
+```
+
+### Invite [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            xerpa-token: company_access_token
+
+    + Body
+
+            {
+                "query": "mutation ($input : InviteInput!) {
+                    inviteProfiles(input: $input) {
+                        id
+                        name
+                        admissionDate
+                        invite { status }
+                        onboarding {
+                            progress {
+                                completed
+                                total
+                            }
+                        }
+                    }
+                }",
+                "variables": {
+                    "input": {
+                        "profiles": [
+                            {
+                                "admissionDate": "2010-10-10",
+                                "email": "fulano@da.silva",
+                                "employmentContract": "APPRENTICE",
+                                "name": "Carinha Novo"
+                            }
+                        ]
+                    }
+                }
+            }
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Body
+            
+            {
+                "data": {
+                "inviteProfiles": [
+                  {
+                    "onboarding": {
+                      "progress": {
+                        "total": 14,
+                        "completed": 0
+                      }
+                    },
+                    "name": "Carinha Novo",
+                    "invite": {
+                      "status": "SENT"
+                    },
+                    "id": "profile:d68ea0bf-517e-49de-aba3-81f9ebccfae5",
+                    "admissionDate": "2010-10-10"
+                  }
+                ]
+              }
+            }
+
+
+
+## Get Profile [/api/public{?profile}]
+
+Get onboarding status.
+
+**Request Body**
+```
+{
+    "query": "query {
+               profile($id : ID) {
+                 name
+                 admissionDate
+                 invite {
+                   status
+                 }
+                 onboarding {
+                   progress {
+                     completed
+                     total
+                   }
+                 }
+               }
+             }",
+    "variables": {
+       "id": "profile:89f27949-22e3-44bf-b5ba-2f07a5861674"
+    }
+}
+
+```
+
+### Get Profile [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            xerpa-token: company_access_token
+
+    + Body
+    
+            {
+                "query": "query($id : ID) { 
+                    profile(id: $id) {
+                        name
+                        admissionDate
+                        invite { status }
+                        onboarding {
+                        progress {
+                            completed
+                            total
+                        }
+                    }
+                }
+            }",
+                "variables": {
+                    "id": "profile:89f27949-22e3-44bf-b5ba-2f07a5861674"
+                }
+            }
+           
+
++ Response 200 (application/json; charset=utf-8)
+
+    + Body
+            
+            {
+                "data": {
+                "inviteProfiles": [
+                  {
+                    "onboarding": {
+                      "progress": {
+                        "total": 14,
+                        "completed": 0
+                      }
+                    },
+                    "name": "Carinha Novo",
+                    "invite": {
+                      "status": "SENT"
+                    },
+                    "id": "profile:d68ea0bf-517e-49de-aba3-81f9ebccfae5",
+                    "admissionDate": "2010-10-10"
+                  }
+                ]
+              }
+            }
