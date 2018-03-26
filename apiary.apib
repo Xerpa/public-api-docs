@@ -1,219 +1,107 @@
 FORMAT: 1A
-HOST: https://api.xerpa.com.br/
+HOST: https://sandbox.xerpa.com.br/
 
 # Xerpa API
-Bem vindo a Xerpa _API_, nesta página você encontrará as informações necessárias para utilizar nossa _API_. Os itens abordados nesta pequena introdução incluem os métodos para autenticação da _API_, 
-o ambiente para realizar os testes das requisições e exemplos de consultas na _API_ utilizando GraphQL. [GraphQL](http://graphql.org/) trata-se de uma linguagem de consultas criada pelo **Facebook**, 
-que possui características facilitadoras para consultas em _APIs_. A primeira característica, de consultas utilizando GraphQL, é a previsibilidade dos retornos, mostrando exatamente o esperado pela requisição. A segunda
-vantagem de se utilizar GraphQL como linguagem para se trabalhar em _APIs_ é a capacidade de multiplas refêrencias de um retorno, permitindo se conseguir toda informação necessária com uma única solicitação ao
-contrário de uma típica _REST_ _API_ que necessita de carregamentos por múbltiplas _URLs_
+
+Bem vindo a Xerpa _API_, nesta página você encontrará as informações
+necessárias para utilizar nossa _API_. Os itens abordados nesta
+pequena introdução incluem os métodos para autenticação da _API_, o
+ambiente para realizar os testes das requisições e exemplos de
+consultas na _API_ utilizando GraphQL.
+
+[GraphQL](http://graphql.org/) trata-se de uma linguagem de consulta
+para _APIs_ criada pelo **Facebook**, que permite obter toda a
+informação em uma única solicitação, ao contrário de uma consulta de
+_API_ usando _REST_, que comumente requer múltiplas interações com o
+servidor.
 
 **Referências**:
 * [facebook.github.io/graphql](http://facebook.github.io/graphql/)
 * [graphql.org](http://graphql.org/)
 
+# _SANDBOX: Ambiente de Testes_
+
+A Xerpa fornece um ambiente de testes isolado com características
+semelhantes ao ambiente de produção. Este ambiente está disponível na
+URL https://sandbox.xerpa.com.br. **No entanto, todos os dados criados
+no ambiente de _sandbox_ são apagados após o período de uma semana**.
+
+Também é importante ressaltar que os _tokens_ criados no _sandbox_ não
+são compartilhados com o ambiente de produção e vice-versa. Portanto,
+sempre que desejar utilizar este ambiente você precisa registrar uma
+empresa e registrar um _token_.
+
+Para registrar um nova empresa, acesse
+https://sandbox.xerpa.com.br/company-signup e complete o processo de
+registro. Depois de concluído, siga os passos a seguir para obter
+acesso à API.
+
 # Autenticação
-O primeiro passo para poder utilizar a Xerpa API é realizar a requisição do _token_ de autenticação na plataforma [Xerpa](https://app.xerpa.com.br/), 
-esta requisição só poderá ser realizada por contas com credenciais de Departamento Pessoal. Os passos para gerar o _token_ são descritos a seguir:
-*No menu principal clique em: Configuração da Empresa > Integrações com outros sistemas > Xerpa API
-*Digite uma pequena descrição sobre o _token_ e clique no botão **Gerar token**.
 
-O _token_ gerado nos passos anteriores permite acesso para realizar requisições em todas as _APIs_ GraphQL utilizadas pela plataforma Xerpa, para isso é necessário que a requisição possua adicionado ao seu **Header** os seguintes itens:
+O primeiro passo para poder utilizar a _API_ da Xerpa é solicitar um
+_token_ de autenticação. Esta requisição só poderá ser realizada por
+contas com credenciais de *Departamento Pessoal*.
 
-| Authorization: | "Bearer " | _token_ | _request_path_|
-|----------------|-----------|---------|---------------|
+Os passos para gerar o _token_ são descritos a seguir. No menu
+principal clique em: _Configuração da Empresa > Integrações com outros
+sistemas > Xerpa API_. Digite uma pequena descrição sobre o _token_ e
+clique no botão *Gerar token*. **Mantenha este _token_ seguro,
+considere-o como uma senha pois este _token_ permite ao usuário ler,
+escrever e apagar qualquer informação associada a empresa**.
 
-# _SandBox_
-O [_SandBox_](link para página) é um ambiente criado para que sejam realizados testes das requisições de GraphQL utilizando o token de autenticação. Neste ambiente, nós disponibilizamos um ambiente com características semelhantes às encontradas
-no ambiente de produção. A _SandBox_ possui um limite de espaço para as informações da sua empresa, importante ressaltar que este ambiente é reiniciado semanalmente perdendo as alterações realizadas anteriormente.
+Depois de criado, cada requisição à _API_ requer um cabeçalho de
+autorização no seguinte formato (lembre-se de substituir _TOKEN_ pelo
+valor obtido no passo anterior):
 
-# Exemplos de requisições
-## Invite [/api/public]
-
-Invite employee.
-
-**Request Body**
 ```
-{
-"query": "mutation ($input : InviteInput!) {
-  inviteProfiles(input: $input) {
-    id
-    name
-    admissionDate
-    invite {
-      status
-    }
-    onboarding {
-      progress {
-        completed
-        total
-      }
-    }
-  }
-}",
-"variables": 
-{
-  "input":
-  {
-    "profiles": [
-      {
-        "admissionDate": "2010-10-10",
-        "email": "fulano@da.silva",
-        "employmentContract": "APPRENTICE",
-        "name": "Carinha Novo"
-      }
-    ]
-  }
-}
-}
+  Authorization: Bearer TOKEN
 ```
 
-### Invite [POST]
+# API Playground
 
-+ Request (application/json)
+[API Playground](https://sandbox.xerpa.com.br/api/playground) é uma
+instância do [graphiql](https://github.com/graphql/graphiql) que
+funciona como uma ferramenta interativa no navegador para explorar uma
+_API GraphQL_. Com essa ferramenta é possível testar suas solicitações
+de maneira interativa e navegar pela estrutura da _API_.
+
+Todos os exemplos nessa documentação podem ser usados no
+_playground_. Para isso copie a soliticação juntamente com as
+variáveis para os locais apropriados no _graphiql_.
+
+## GraphQL API [/api/g{?variables}]
+
+### Profile [POST]
+
+- Parameters
+    - variables: `{"profile_id": "1"}` (json, required)
+
++ Request (application/graphql)
 
     + Headers
 
-            xerpa-token: company_access_token
+            authorization: Bearer TOKEN
 
     + Body
 
-            {
-                "query": "mutation ($input : InviteInput!) {
-                    inviteProfiles(input: $input) {
-                        id
-                        name
-                        admissionDate
-                        invite { status }
-                        onboarding {
-                            progress {
-                                completed
-                                total
-                            }
-                        }
-                    }
-                }",
-                "variables": {
-                    "input": {
-                        "profiles": [
-                            {
-                                "admissionDate": "2010-10-10",
-                                "email": "fulano@da.silva",
-                                "employmentContract": "APPRENTICE",
-                                "name": "Carinha Novo"
-                            }
-                        ]
-                    }
-                }
-            }
-
-+ Response 200 (application/json; charset=utf-8)
-
-    + Body
-            
-            {
-                "data": {
-                "inviteProfiles": [
-                  {
-                    "onboarding": {
-                      "progress": {
-                        "total": 14,
-                        "completed": 0
-                      }
-                    },
-                    "name": "Carinha Novo",
-                    "invite": {
-                      "status": "SENT"
-                    },
-                    "id": "profile:d68ea0bf-517e-49de-aba3-81f9ebccfae5",
-                    "admissionDate": "2010-10-10"
-                  }
-                ]
+            query($profile_id: ID!) {
+              profile(id: $id) {
+                id, name
               }
             }
 
-
-
-## Get Profile [/api/public{?profile}]
-
-Get onboarding status.
-
-**Request Body**
-```
-{
-    "query": "query {
-               profile($id : ID) {
-                 name
-                 admissionDate
-                 invite {
-                   status
-                 }
-                 onboarding {
-                   progress {
-                     completed
-                     total
-                   }
-                 }
-               }
-             }",
-    "variables": {
-       "id": "profile:89f27949-22e3-44bf-b5ba-2f07a5861674"
-    }
-}
-
-```
-
-### Get Profile [POST]
-
-+ Request (application/json)
-
-    + Headers
-
-            xerpa-token: company_access_token
++ Response 200 (application/json)
 
     + Body
-    
-            {
-                "query": "query($id : ID) { 
-                    profile(id: $id) {
-                        name
-                        admissionDate
-                        invite { status }
-                        onboarding {
-                        progress {
-                            completed
-                            total
-                        }
-                    }
-                }
-            }",
-                "variables": {
-                    "id": "profile:89f27949-22e3-44bf-b5ba-2f07a5861674"
-                }
-            }
-           
 
-+ Response 200 (application/json; charset=utf-8)
-
-    + Body
-            
             {
                 "data": {
-                "inviteProfiles": [
-                  {
-                    "onboarding": {
-                      "progress": {
-                        "total": 14,
-                        "completed": 0
-                      }
-                    },
-                    "name": "Carinha Novo",
-                    "invite": {
-                      "status": "SENT"
-                    },
-                    "id": "profile:d68ea0bf-517e-49de-aba3-81f9ebccfae5",
-                    "admissionDate": "2010-10-10"
-                  }
-                ]
-              }
+                    "profile": {
+                        "id": "1",
+                        "name": "Tenzing Norgay"
+                    }
+                }
             }
+
+    + Attributes
+        + profile: (Profile)
