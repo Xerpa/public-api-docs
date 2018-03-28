@@ -107,7 +107,8 @@ variáveis para os locais apropriados no _graphiql_.
         + profile: (Profile)
 
 # Data Structures
-## WorkPeriod
+
+## WorkPeriod (object)
 
 + acjef_path (string)
 + afdt_path (string)
@@ -135,7 +136,8 @@ variáveis para os locais apropriados no _graphiql_.
 + viewer_can_close (boolean)
 + viewer_can_download_treatment_files (boolean)
 
-## ApiToken
+
+## ApiToken (object)
 
 + company (Company)
 + description (string)
@@ -143,39 +145,46 @@ variáveis para os locais apropriados no _graphiql_.
 + inserted_at (string) -- naivedatetime
 + token (string)
 
-## IncompleteProfile
+
+## IncompleteProfile (object)
 
 + incomplete_fields (string)
 + profile (Profile)
 
-## HealthInsurance
+
+## HealthInsurance (object)
 
 + id (string) -- id
 + name (string)
 + plan (string)
 + provider (string)
 
-## WorkdayHistoryActionDescription
+
+## WorkdayHistoryActionDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## WorkPeriodOverviewByManager
+
+## WorkPeriodOverviewByManager (object)
 
 + manager (object)
 + overview (WorkPeriodOverview)
 
-## CustomField
+
+## CustomField (object)
 
 + id (string) -- id
 + name (string)
 
-## UploadDeleteReply
+
+## UploadDeleteReply (object)
 
 + object_id (string)
 
-## TurnoverAggregation
+
+## TurnoverAggregation (object)
 
 + bucket_department (Identifier)
 + turnover_classic (number)
@@ -183,47 +192,55 @@ variáveis para os locais apropriados no _graphiql_.
 + turnover_voluntary (number)
 + year_month (YearMonth)
 
-## ProbationPeriodsDescription
+
+## ProbationPeriodsDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## CompanyExternalAssociations
+
+## CompanyExternalAssociations (object)
 
 + dimep_kairos (DimepKairosCompanyExternalAssociations)
 + dominio (DominioCompanyExternalAssociations)
 
-## ProfileDentalInsurance
+
+## ProfileDentalInsurance (object)
 
 + chosen (DentalInsurance)
 + status (string)
 
-## WorkPeriodProfile
+
+## WorkPeriodProfile (object)
 
 + is_signed (boolean)
 + profile (Profile)
 + raw_attendance_record_attachment (Attachment)
 + signed_attendance_record_attachment (Attachment)
 
-## WorkloadDescriptionPeriod
+
+## WorkloadDescriptionPeriod (object)
 
 + checkin (string) -- time
 + checkout (string) -- time
 
-## ProfilesMissingLastDay
+
+## ProfilesMissingLastDay (object)
 
 + results (ProfileMissingLastDay)
 + total_hits (number)
 
-## PaymentBoleto
+
+## PaymentBoleto (object)
 
 + due (string) -- date
 + number (string)
 + status (string)
 + url (string)
 
-## Profile
+
+## Profile (object)
 
 + work_period (ProfileWorkPeriod)
 + health_insurance (ProfileHealthInsurance)
@@ -274,7 +291,8 @@ variáveis para os locais apropriados no _graphiql_.
 + username (string)
 + account (Account)
 
-## Address
+
+## Address (object)
 
 + address1 (string)
 + address2 (string)
@@ -286,23 +304,27 @@ variáveis para os locais apropriados no _graphiql_.
 + number (string)
 + zipcode (string)
 
-## Progress
+
+## Progress (object)
 
 + completed (number)
 + total (number)
 
-## WorkPeriodAcceptAllReply
+
+## WorkPeriodAcceptAllReply (object)
 
 + done (WorkPeriodFilterResult)
 + fail_absences (Absence)
 + fail_workdays (Workday)
 
-## WorkPeriodFilterResults
+
+## WorkPeriodFilterResults (object)
 
 + results (WorkPeriodFilterResult)
 + total_hits (number)
 
-## DentalInsurance
+
+## DentalInsurance (object)
 
 + id (string) -- id
 + name (string)
@@ -310,18 +332,21 @@ variáveis para os locais apropriados no _graphiql_.
 + provider (string)
 + total_cost (string) -- money
 
-## ProfileStatusDescription
+
+## ProfileStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## SearchAggregationCount
+
+## SearchAggregationCount (object)
 
 + count (number)
 + value (string)
 
-## PersonalContact
+
+## PersonalContact (object)
 
 + email (string)
 + emergency (EmergencyContact)
@@ -330,26 +355,30 @@ variáveis para os locais apropriados no _graphiql_.
 + profile (object) -- Profile
 + updated_contacts (string)
 
-## PublicProfile
+
+## PublicProfile (object)
 
 + avatar (Thumbnail)
 + id (string) -- id
 + name (string)
 + position_level (PublicPositionLevel)
 
-## ChildCare
+
+## ChildCare (object)
 
 + discount_percentage (number)
 + id (string) -- id
 + name (string)
 
-## Constant
+
+## Constant (object)
 
 + code (string)
 + label (string)
 + name (string)
 
-## EnumDescriptions
+
+## EnumDescriptions (object)
 
 + absence_status (AbsenceStatusDescription)
 + absence_type (AbsenceTypeDescription)
@@ -380,12 +409,14 @@ variáveis para os locais apropriados no _graphiql_.
 + workload_type (WorkloadTypeDescription)
 + xerpa_plan (XerpaPlanDescription)
 
-## EntriesSummary
+
+## EntriesSummary (object)
 
 + disregarded_entries (WorkdayEntry)
 + entry_pairs (EntriesSummaryEntryPair)
 
-## MealAllowance
+
+## MealAllowance (object)
 
 + amount (string) -- money
 + discount_amount (string) -- money
@@ -396,52 +427,61 @@ variáveis para os locais apropriados no _graphiql_.
 + provider (MealAllowanceProvider)
 + type (string)
 
-## WorkdayWorkload
+
+## WorkdayWorkload (object)
 
 + load_in_minutes (number)
 + periods (WorkloadDescriptionPeriod)
 + regimen (string)
 
-## CustomIntegrationFieldCategory
+
+## CustomIntegrationFieldCategory (object)
 
 + name (string)
 + type (string)
 
-## BusinessUnit
+
+## BusinessUnit (object)
 
 + external_associations (ExternalAssociations)
 + id (string) -- id
 + name (string)
 
-## WorkloadSchedule
+
+## WorkloadSchedule (object)
 
 + description (WorkloadDescription)
 + load_in_minutes (number)
 + nuclear_descriptions (WorkloadNuclearDescription)
 + regimen (string)
 
-## YearMonth
+
+## YearMonth (object)
 
 + month (string) -- month
 + year (number)
 
-## AbsenceStatusDescription
+
+## AbsenceStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## ProfileMissingLastDay
+
+## ProfileMissingLastDay (object)
 
 + pagination_token (string) -- id
 + profile (Profile)
 
-## PaystubCapabilityInfo
+
+## PaystubCapabilityInfo (object)
 
 + capability (string)
 + enabled (boolean)
 
-## Workload
+
+## Workload (object)
 
 + company (object) -- Company
 + external_associations (ExternalAssociations)
@@ -450,69 +490,81 @@ variáveis para os locais apropriados no _graphiql_.
 + schedule (WorkloadSchedule)
 + type (string)
 
-## Offboard
+
+## Offboard (object)
 
 + other_attachments (object)
 + payment_attachments (object)
 
-## WorkloadDescription
+
+## WorkloadDescription (object)
 
 + id (string) -- id
 + periods (WorkloadDescriptionPeriod)
 + weekdays (string)
 
-## PaystubStatisticValue
+
+## PaystubStatisticValue (object)
 
 + entry (Identifier)
 + value (number)
 
-## ProfileBenefitStatusDescription
+
+## ProfileBenefitStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## VerificationStatusDescription
+
+## VerificationStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## SignatureResult
+
+## SignatureResult (object)
 
 + results (WorkPeriodProfile)
 + total_hits (number)
 
-## MealAllowanceDiscountDescription
+
+## MealAllowanceDiscountDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## MissingProfiles
+
+## MissingProfiles (object)
 
 + results (DanglingPis)
 + total_hits (number)
 
-## PaymentStatusDescription
+
+## PaymentStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## CostCenter
+
+## CostCenter (object)
 
 + external_associations (ExternalAssociations)
 + id (string) -- id
 + name (string)
 
-## ContactPreference
+
+## ContactPreference (object)
 
 + contact (Contact)
 + id (string) -- id
 + topic (string)
 
-## RootSubscriptionType
+
+## RootSubscriptionType (object)
 
 + generating_attendance_records (Progress)
 + work_period_overview (WorkPeriodSubscriptionOverviewWithSummaries)
@@ -520,17 +572,20 @@ variáveis para os locais apropriados no _graphiql_.
 + work_period_overview_by_manager (WorkPeriodSubscriptionOverviewByManager)
 + work_period_profile_overview (WorkPeriodSubscriptionProfile)
 
-## WorkPeriodSubscriptionOverviewByDepartment
+
+## WorkPeriodSubscriptionOverviewByDepartment (object)
 
 + department (Department)
 + overview (WorkPeriodSubscriptionOverview)
 + summaries (WorkPeriodSubscriptionProfile)
 
-## UploadUrl
+
+## UploadUrl (object)
 
 + url (string)
 
-## BitmapAttachment
+
+## BitmapAttachment (object)
 
 + etag (string)
 + height (number)
@@ -542,17 +597,20 @@ variáveis para os locais apropriados no _graphiql_.
 + url (string)
 + width (number)
 
-## Position
+
+## Position (object)
 
 + id (string) -- id
 + levels (PositionLevel)
 + name (string)
 
-## Viewer
+
+## Viewer (object)
 
 + profile (Profile)
 
-## Contact
+
+## Contact (object)
 
 + id (string) -- id
 + label (string)
@@ -562,45 +620,53 @@ variáveis para os locais apropriados no _graphiql_.
 + verification_status (string)
 + verified (boolean)
 
-## AccessLevelDescription
+
+## AccessLevelDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Token
+
+## Token (object)
 
 + id (string) -- id
 + token (string) -- id
 
-## AggregationBucketMissing
+
+## AggregationBucketMissing (object)
 
 + id (string) -- id
 + name (string)
 
-## ProfileSearchResult
+
+## ProfileSearchResult (object)
 
 + profiles (Profile)
 + total_hits (number)
 
-## WorkPeriodListOverview
+
+## WorkPeriodListOverview (object)
 
 + profiles_count (number)
 + profiles_with_absences_count (number)
 
-## Cbo
+
+## Cbo (object)
 
 + code (string)
 + id (string) -- id
 + name (string)
 
-## SalaryPeriodDescription
+
+## SalaryPeriodDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## ProfileWorkPeriod
+
+## ProfileWorkPeriod (object)
 
 + archived_on (string) -- date
 + end_on (string) -- date
@@ -611,45 +677,53 @@ variáveis para os locais apropriados no _graphiql_.
 + status (string)
 + workdays (Workday)
 
-## UploadInfo
+
+## UploadInfo (object)
 
 + field_name (string)
 + handle (string)
 
-## DanglingPis
+
+## DanglingPis (object)
 
 + pagination_token (string) -- id
 + pis (string) -- id
 
-## ProfilePhone
+
+## ProfilePhone (object)
 
 + branch (string)
 + business (string)
 + personal (string)
 
-## Identifier
+
+## Identifier (object)
 
 + key (string) -- id
 + label (string)
 
-## MutatePositionReply
+
+## MutatePositionReply (object)
 
 + errors (Error)
 + positions (Position)
 
-## WorkdayEntryTypeDescription
+
+## WorkdayEntryTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## StreetTypeDescription
+
+## StreetTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## WorkloadNuclearDescription
+
+## WorkloadNuclearDescription (object)
 
 + id (string) -- id
 + interval_duration_in_minutes (number)
@@ -660,65 +734,75 @@ variáveis para os locais apropriados no _graphiql_.
 + tolerance_in_minutes (number)
 + weekdays (string)
 
-## PaystubCapabilityDescription
+
+## PaystubCapabilityDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## IntegrationField
+
+## IntegrationField (object)
 
 + counts (IntegrationCount)
 + incomplete_objects (object)
 + name (string)
 + type (string)
 
-## NotificationTopicTypeDescription
+
+## NotificationTopicTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## WorkPeriodConfig
+
+## WorkPeriodConfig (object)
 
 + incomplete_profiles (IncompleteProfiles)
 + missing_profiles (MissingProfiles)
 + profiles_missing_last_day (ProfilesMissingLastDay)
 
-## WorkdayStatusDescription
+
+## WorkdayStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## TimeClock
+
+## TimeClock (object)
 
 + company (Company)
 + name (string)
 + serial_number (string)
 
-## ProfileWorkPeriodOverview
+
+## ProfileWorkPeriodOverview (object)
 
 + time_balance_in_minutes (number)
 + workdays_missed_count (number)
 + workdays_pending_approval_count (number)
 + workdays_pending_review_count (number)
 
-## Statistics
+
+## Statistics (object)
 
 + headcount (Headcount)
 + paystub (PaystubStatistics)
 + turnover (Turnover)
 + year_month_bounds (YearMonth)
 
-## PositionLevel
+
+## PositionLevel (object)
 
 + external_associations (ExternalAssociations)
 + id (string) -- id
 + name (string)
 + position (Position)
 
-## Absence
+
+## Absence (object)
 
 + attachment (Attachment)
 + comments (Thread)
@@ -736,46 +820,54 @@ variáveis para os locais apropriados no _graphiql_.
 + viewer_can_change_status (boolean)
 + viewer_can_edit (boolean)
 
-## WorkPeriodSubscriptionOverviewWithSummaries
+
+## WorkPeriodSubscriptionOverviewWithSummaries (object)
 
 + overview (WorkPeriodSubscriptionOverview)
 + summaries (WorkPeriodSubscriptionProfile)
 
-## IncompleteProfiles
+
+## IncompleteProfiles (object)
 
 + results (WorkPeriodIncompleteProfile)
 + total_hits (number)
 
-## ProfileChildCare
+
+## ProfileChildCare (object)
 
 + chosen (ChildCare)
 + status (string)
 
-## RootQueryType
+
+## RootQueryType (object)
 
 + company (Company)
 + enum_descriptions (EnumDescriptions)
 + profile (Profile)
 + viewer (Viewer)
 
-## WorkloadTypeDescription
+
+## WorkloadTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## TurnoverResult
+
+## TurnoverResult (object)
 
 + value (number)
 
-## Union
+
+## Union (object)
 
 + abbreviation (string)
 + external_associations (ExternalAssociations)
 + id (string) -- id
 + name (string)
 
-## PdfAttachment
+
+## PdfAttachment (object)
 
 + aspect (number)
 + etag (string)
@@ -787,22 +879,26 @@ variáveis para os locais apropriados no _graphiql_.
 + type (string)
 + url (string)
 
-## AbsenceTypeDescription
+
+## AbsenceTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## MealAllowanceProvider
+
+## MealAllowanceProvider (object)
 
 + name (string)
 
-## Turnover
+
+## Turnover (object)
 
 + dataset (TurnoverAggregation)
 + known_departments (Identifier)
 
-## CompanyBenefits
+
+## CompanyBenefits (object)
 
 + child_cares (ChildCare)
 + dental_insurances (DentalInsurance)
@@ -811,7 +907,8 @@ variáveis para os locais apropriados no _graphiql_.
 + meal_allowances (MealAllowance)
 + transports (Transport)
 
-## WorkPeriodOverview
+
+## WorkPeriodOverview (object)
 
 + profiles_count (number)
 + profiles_done_count (number)
@@ -824,14 +921,16 @@ variáveis para os locais apropriados no _graphiql_.
 + profiles_with_workdays_pending_count (number)
 + time_balance_in_minutes (number)
 
-## Billing
+
+## Billing (object)
 
 + history (object)
 + payment (Payment)
 + plan (string)
 + plan_identifier (string)
 
-## CustomIntegrationExport
+
+## CustomIntegrationExport (object)
 
 + custom_integration (CustomIntegration)
 + file_path (string)
@@ -840,30 +939,35 @@ variáveis para os locais apropriados no _graphiql_.
 + integration (object)
 + profiles (Profile)
 
-## SearchAggregation
+
+## SearchAggregation (object)
 
 + counts (SearchAggregationCount)
 + field_name (string)
 
-## EmergencyContact
+
+## EmergencyContact (object)
 
 + name (string)
 + phone (string)
 + relationship (string)
 
-## WorkdayHistory
+
+## WorkdayHistory (object)
 
 + what (string)
 + when (string) -- naivedatetime
 + who (PublicProfile)
 
-## ContactTypeDescription
+
+## ContactTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## WorkdayEntry
+
+## WorkdayEntry (object)
 
 + date (string) -- date
 + edit_reason (string)
@@ -871,36 +975,42 @@ variáveis para os locais apropriados no _graphiql_.
 + time (string) -- time
 + type (string)
 
-## ExpectedEntry
+
+## ExpectedEntry (object)
 
 + date (string) -- date
 + time (string) -- time
 
-## Department
+
+## Department (object)
 
 + external_associations (ExternalAssociations)
 + id (string) -- id
 + name (string)
 
-## LifeInsurance
+
+## LifeInsurance (object)
 
 + id (string) -- id
 + name (string)
 + plan (string)
 + provider (string)
 
-## MealAllowanceTypeDescription
+
+## MealAllowanceTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Role
+
+## Role (object)
 
 + access (string)
 + company (Company)
 
-## Comment
+
+## Comment (object)
 
 + author (PublicProfile)
 + id (string) -- id
@@ -908,36 +1018,42 @@ variáveis para os locais apropriados no _graphiql_.
 + message (string)
 + thread (Thread)
 
-## EntryPosition
+
+## EntryPosition (object)
 
 + entries (WorkdayEntry)
 + expected (ExpectedEntry)
 
-## ProfileWorkPeriodListView
+
+## ProfileWorkPeriodListView (object)
 
 + end_on (string) -- date
 + id (string) -- id
 + start_on (string) -- date
 
-## ProfileLifeInsurance
+
+## ProfileLifeInsurance (object)
 
 + chosen (LifeInsurance)
 + status (string)
 
-## DominioCompanyExternalAssociations
+
+## DominioCompanyExternalAssociations (object)
 
 + branch (string)
 + id (string)
 + service (string)
 + simples (string)
 
-## Transport
+
+## Transport (object)
 
 + id (string) -- id
 + name (string)
 + type (string)
 
-## ProfileTransport
+
+## ProfileTransport (object)
 
 + card_description (string)
 + description (string)
@@ -945,29 +1061,34 @@ variáveis para os locais apropriados no _graphiql_.
 + total_cost (string) -- money
 + type (string)
 
-## ProfileMealAllowance
+
+## ProfileMealAllowance (object)
 
 + chosen (MealAllowance)
 + status (string)
 
-## PaystubFilePage
+
+## PaystubFilePage (object)
 
 + id (string) -- id
 
-## WorkPeriodFilterResult
+
+## WorkPeriodFilterResult (object)
 
 + absences (Absence)
 + profile (Profile)
 + time_balance_in_minutes (number)
 + workdays (Workday)
 
-## CustomIntegration
+
+## CustomIntegration (object)
 
 + company (Company)
 + fields (CustomIntegrationField)
 + id (string) -- id
 
-## WorkPeriodSubscriptionOverview
+
+## WorkPeriodSubscriptionOverview (object)
 
 + profiles_count (number)
 + profiles_done_count (number)
@@ -980,7 +1101,8 @@ variáveis para os locais apropriados no _graphiql_.
 + profiles_with_workdays_pending_count (number)
 + time_balance_in_minutes (number)
 
-## CustomCompanyIntegration
+
+## CustomCompanyIntegration (object)
 
 + active (boolean)
 + associable_fields (IntegrationField)
@@ -992,7 +1114,8 @@ variáveis para os locais apropriados no _graphiql_.
 + name (string)
 + type (string)
 
-## DefaultCompanyIntegration
+
+## DefaultCompanyIntegration (object)
 
 + active (boolean)
 + associable_fields (IntegrationField)
@@ -1003,20 +1126,23 @@ variáveis para os locais apropriados no _graphiql_.
 + name (string)
 + type (string)
 
-## TokenDescription
+
+## TokenDescription (object)
 
 + company (object) -- Company
 + description (string)
 + id (string) -- id
 + inserted_at (string) -- naivedatetime
 
-## ExternalAssociations
+
+## ExternalAssociations (object)
 
 + custom (string)
 + dominio (string)
 + totvs_rm_labore (string)
 
-## Workday
+
+## Workday (object)
 
 + absences (Absence)
 + absences_time_in_minutes (number)
@@ -1044,12 +1170,14 @@ variáveis para os locais apropriados no _graphiql_.
 + work_period (ProfileWorkPeriod)
 + workload (WorkdayWorkload)
 
-## WorkPeriodOverviewByDepartment
+
+## WorkPeriodOverviewByDepartment (object)
 
 + department (object)
 + overview (WorkPeriodOverview)
 
-## TimeClockImportFileOverview
+
+## TimeClockImportFileOverview (object)
 
 + entries_count (number)
 + entries_end_on (string) -- date
@@ -1057,13 +1185,15 @@ variáveis para os locais apropriados no _graphiql_.
 + profiles_not_found_count (number)
 + time_clock (TimeClock)
 
-## ProfileAccessSituationDescription
+
+## ProfileAccessSituationDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Office
+
+## Office (object)
 
 + address (Address)
 + company (object) -- Company
@@ -1071,29 +1201,34 @@ variáveis para os locais apropriados no _graphiql_.
 + id (string) -- id
 + name (string)
 
-## EnumAggregation
+
+## EnumAggregation (object)
 
 + bucket (Identifier)
 + count (number)
 
-## CustomIntegrationField
+
+## CustomIntegrationField (object)
 
 + category (CustomIntegrationFieldCategory)
 + name (string)
 + selected (boolean)
 + type (string)
 
-## PublicPosition
+
+## PublicPosition (object)
 
 + id (string) -- id
 + name (string)
 
-## Payment
+
+## Payment (object)
 
 + method (string)
 + next_payment_due (string) -- date
 
-## WorkPeriodListView
+
+## WorkPeriodListView (object)
 
 + end_on (string) -- date
 + id (string) -- id
@@ -1101,7 +1236,8 @@ variáveis para os locais apropriados no _graphiql_.
 + start_on (string) -- date
 + status (string)
 
-## DefaultIntegrationExport
+
+## DefaultIntegrationExport (object)
 
 + dependents_file_path (string)
 + file_path (string)
@@ -1112,57 +1248,67 @@ variáveis para os locais apropriados no _graphiql_.
 + profiles (Profile)
 + renapse_bank_file_path (string)
 
-## Country
+
+## Country (object)
 
 + code (string)
 + id (string) -- id
 + name (string)
 
-## Attachment
+
+## Attachment (object)
 
 + name (string)
 + object_id (string)
 + thumbnail (Thumbnail)
 
-## DimepKairosCompanyExternalAssociations
+
+## DimepKairosCompanyExternalAssociations (object)
 
 + password (string)
 + username (string)
 
-## EntriesSummaryEntryPair
+
+## EntriesSummaryEntryPair (object)
 
 + in (WorkdayEntry)
 + out (WorkdayEntry)
 
-## State
+
+## State (object)
 
 + code (string)
 + country (Country)
 + id (string) -- id
 + name (string)
 
-## PaymentMethodDescription
+
+## PaymentMethodDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Thumbnail
+
+## Thumbnail (object)
 
 + url (string)
 
-## FilteredWorkPeriod
+
+## FilteredWorkPeriod (object)
 
 + overview (WorkPeriodOverview)
 + treatment (WorkPeriodFilterResults)
 
-## PaystubStatistics
+
+## PaystubStatistics (object)
 
 + available_departments (Identifier)
 + dataset (PaystubStatisticDataset)
 + year_month_bounds (YearMonth)
 
-## KenobyIntegration
+
+## KenobyIntegration (object)
 
 + active (boolean)
 + associable_fields (IntegrationField)
@@ -1174,35 +1320,41 @@ variáveis para os locais apropriados no _graphiql_.
 + token (Token)
 + type (string)
 
-## Thread
+
+## Thread (object)
 
 + id (string) -- id
 + messages (Comment)
 
-## TimeClockImportResult
+
+## TimeClockImportResult (object)
 
 + id (string) -- id
 + import_file_overview (TimeClockImportFileOverview)
 + pending (boolean)
 + profiles_not_found_count (number)
 
-## WorkPeriodStatusDescription
+
+## WorkPeriodStatusDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## PaymentCreditCard
+
+## PaymentCreditCard (object)
 
 + due (string) -- date
 + status (string)
 
-## VerificationCode
+
+## VerificationCode (object)
 
 + contact_id (string) -- id
 + profile (Profile)
 
-## BusinessContact
+
+## BusinessContact (object)
 
 + branch (string)
 + email (string)
@@ -1211,24 +1363,28 @@ variáveis para os locais apropriados no _graphiql_.
 + profile (object) -- Profile
 + updated_contacts (string)
 
-## TransportTypeDescription
+
+## TransportTypeDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## PaystubStatisticDataset
+
+## PaystubStatisticDataset (object)
 
 + department_id (string)
 + values (PaystubStatisticValue)
 + year_month (YearMonth)
 
-## WorkPeriodIncompleteProfile
+
+## WorkPeriodIncompleteProfile (object)
 
 + pagination_token (string) -- id
 + profile (Profile)
 
-## RootMutationType
+
+## RootMutationType (object)
 
 + token_delete (Token)
 + set_last_day (WorkPeriodConfig)
@@ -1287,13 +1443,15 @@ variáveis para os locais apropriados no _graphiql_.
 + workday_adjust (Workday)
 + complete_profile_information (WorkPeriodConfig)
 
-## WeekdayDescription
+
+## WeekdayDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Headcount
+
+## Headcount (object)
 
 + age (EnumAggregation)
 + count (number)
@@ -1305,40 +1463,47 @@ variáveis para os locais apropriados no _graphiql_.
 + skin_color (EnumAggregation)
 + year_month (YearMonth)
 
-## WorkPeriodSubscriptionProfile
+
+## WorkPeriodSubscriptionProfile (object)
 
 + profile_id (string) -- id
 + time_balance_in_minutes (number)
 
-## EmploymentContractDescription
+
+## EmploymentContractDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## IntegrationCount
+
+## IntegrationCount (object)
 
 + associated (number)
 + total (number)
 
-## City
+
+## City (object)
 
 + id (string) -- id
 + name (string)
 + state (State)
 
-## PublicPositionLevel
+
+## PublicPositionLevel (object)
 
 + id (string) -- id
 + name (string)
 + position (PublicPosition)
 
-## Error
+
+## Error (object)
 
 + key (string)
 + msg (string)
 
-## Company
+
+## Company (object)
 
 + work_period (WorkPeriod)
 + business_units (BusinessUnit)
@@ -1384,30 +1549,36 @@ variáveis para os locais apropriados no _graphiql_.
 + name (string)
 + viewer_can_view_work_periods (boolean)
 
-## MealAllowancePeriodicityDescription
+
+## MealAllowancePeriodicityDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## XerpaPlanDescription
+
+## XerpaPlanDescription (object)
 
 + label (string)
 + name (string)
 + value (string)
 
-## Account
+
+## Account (object)
 
 + role (Role)
 + roles (Role)
 
-## ProfileHealthInsurance
+
+## ProfileHealthInsurance (object)
 
 + chosen (HealthInsurance)
 + status (string)
 
-## WorkPeriodSubscriptionOverviewByManager
+
+## WorkPeriodSubscriptionOverviewByManager (object)
 
 + manager (Profile)
 + overview (WorkPeriodSubscriptionOverview)
 + summaries (WorkPeriodSubscriptionProfile)
+

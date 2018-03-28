@@ -174,7 +174,7 @@ def format_field(field, type_0, cycles):
 
 def format_type(type_, cycles):
     fields = "\n".join([format_field(field, type_[0], cycles) for field in type_[1].items()])
-    return("## {}\n\n{}\n".format(type_[0], fields))
+    return("\n## {} (object)\n\n{}\n".format(type_[0], fields))
 
 def format_schema(schema, cycles):
     return("\n".join([format_type(type_, cycles) for type_ in schema.items()]))
