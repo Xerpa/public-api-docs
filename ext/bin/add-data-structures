@@ -1,0 +1,10 @@
+#!/bin/sh
+
+bin_python=${bin_python:-python3}
+
+tempfile=$(mktemp) && {
+  trap 'rm -f "$tempfile"' EXIT
+  sed '/# Data Structures/q' apiary.apib >$tempfile
+  $bin_python ext/bin/data-structures.py >>$tempfile
+  mv $tempfile apiary.apib
+}
