@@ -73,6 +73,8 @@ variáveis para os locais apropriados no _graphiql_.
 
 ### Profile [POST]
 
+Dados de perfil
+
 - Parameters
     - variables: `{"profile_id": "1"}` (json, required)
 
@@ -105,6 +107,43 @@ variáveis para os locais apropriados no _graphiql_.
 
     + Attributes
         + profile: (Profile)
+
+### Company [POST]
+
+Dados da empresa
+
+- Parameters
+    - variables: `{"company_id": "1"}` (json, required)
+
++ Request (application/graphql)
+
+    + Headers
+
+            authorization: Bearer TOKEN
+
+    + Body
+
+            query($company_id: ID!) {
+              company(id: $company_id) {
+                id, name
+              }
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "data": {
+                    "company": {
+                        "id": "1",
+                        "name": "Xerpa"
+                    }
+                }
+            }
+
+    + Attributes
+        + company: (Company)
 
 # Data Structures
 
@@ -1581,4 +1620,3 @@ variáveis para os locais apropriados no _graphiql_.
 + manager (Profile)
 + overview (WorkPeriodSubscriptionOverview)
 + summaries (WorkPeriodSubscriptionProfile)
-
