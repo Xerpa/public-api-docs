@@ -104,4 +104,1311 @@ variáveis para os locais apropriados no _graphiql_.
             }
 
     + Attributes
-        + profile: (object)
+        + profile: (Profile)
+
+# Data Structures
+## WorkPeriod
+
++ acjef_path (string)
++ afdt_path (string)
++ all_attendance_records_signed (boolean)
++ archived_on (string) -- date
++ can_be_closed (boolean)
++ closed_on (string) -- date
++ department (object)
++ departments_overview (WorkPeriodOverviewByDepartment)
++ end_on (string) -- date
++ filter (FilteredWorkPeriod)
++ generating_attendance_records (boolean)
++ id (string) -- id
++ manager (object)
++ managers_overview (WorkPeriodOverviewByManager)
++ profile_count (number)
++ raw_attendance_records_object_ids_by_department (string)
++ raw_attendance_records_object_ids_by_manager (string)
++ signature_count (number)
++ signatures (SignatureResult)
++ start_on (string) -- date
++ status (string)
++ time_summary_path (string)
++ viewer_can_archive (boolean)
++ viewer_can_close (boolean)
++ viewer_can_download_treatment_files (boolean)
+
+## ApiToken
+
++ company (Company)
++ description (string)
++ id (string) -- id
++ inserted_at (string) -- naivedatetime
++ token (string)
+
+## IncompleteProfile
+
++ incomplete_fields (string)
++ profile (Profile)
+
+## HealthInsurance
+
++ id (string) -- id
++ name (string)
++ plan (string)
++ provider (string)
+
+## WorkdayHistoryActionDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## WorkPeriodOverviewByManager
+
++ manager (object)
++ overview (WorkPeriodOverview)
+
+## CustomField
+
++ id (string) -- id
++ name (string)
+
+## UploadDeleteReply
+
++ object_id (string)
+
+## TurnoverAggregation
+
++ bucket_department (Identifier)
++ turnover_classic (number)
++ turnover_involuntary (number)
++ turnover_voluntary (number)
++ year_month (YearMonth)
+
+## ProbationPeriodsDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## CompanyExternalAssociations
+
++ dimep_kairos (DimepKairosCompanyExternalAssociations)
++ dominio (DominioCompanyExternalAssociations)
+
+## ProfileDentalInsurance
+
++ chosen (DentalInsurance)
++ status (string)
+
+## WorkPeriodProfile
+
++ is_signed (boolean)
++ profile (Profile)
++ raw_attendance_record_attachment (Attachment)
++ signed_attendance_record_attachment (Attachment)
+
+## WorkloadDescriptionPeriod
+
++ checkin (string) -- time
++ checkout (string) -- time
+
+## ProfilesMissingLastDay
+
++ results (ProfileMissingLastDay)
++ total_hits (number)
+
+## PaymentBoleto
+
++ due (string) -- date
++ number (string)
++ status (string)
++ url (string)
+
+## Profile
+
++ work_period (ProfileWorkPeriod)
++ health_insurance (ProfileHealthInsurance)
++ absences (Absence)
++ fallback_contact (string)
++ trusted_position (boolean)
++ guid (string) -- id
++ managers (PublicProfile)
++ dental_insurance (ProfileDentalInsurance)
++ id (string) -- id
++ personal_contact (PersonalContact)
++ salary_period (string)
++ child_care (ProfileChildCare)
++ probation_date1 (string) -- date
++ viewer_can_view_salary (boolean)
++ meal_allowance (ProfileMealAllowance)
++ business_unit (BusinessUnit)
++ notification_contacts (Contact)
++ employment_contract (string)
++ workload (Workload)
++ offboard (Offboard)
++ cost_center (CostCenter)
++ probation_date2 (string) -- date
++ salary (string) -- money
++ viewer_can_edit_contract (boolean)
++ access_situation (string)
++ cbo (Cbo)
++ phone (ProfilePhone)
++ punchcard_required (boolean)
++ position_level (PositionLevel)
++ absence (Absence)
++ probation_periods (string)
++ admission_date (string) -- date
++ union (Union)
++ emergency_contact (EmergencyContact)
++ avatar (Thumbnail)
++ department (Department)
++ life_insurance (ProfileLifeInsurance)
++ contact_preferences (ContactPreference)
++ transport (ProfileTransport)
++ overtime_allowed (boolean)
++ work_periods (ProfileWorkPeriodListView)
++ office (Office)
++ viewer_can_edit_salary (boolean)
++ business_contact (BusinessContact)
++ status (string)
++ name (string)
++ username (string)
++ account (Account)
+
+## Address
+
++ address1 (string)
++ address2 (string)
++ addrtype (string)
++ city (City)
++ city_id (string) -- id
++ district (string)
++ id (string) -- id
++ number (string)
++ zipcode (string)
+
+## Progress
+
++ completed (number)
++ total (number)
+
+## WorkPeriodAcceptAllReply
+
++ done (WorkPeriodFilterResult)
++ fail_absences (Absence)
++ fail_workdays (Workday)
+
+## WorkPeriodFilterResults
+
++ results (WorkPeriodFilterResult)
++ total_hits (number)
+
+## DentalInsurance
+
++ id (string) -- id
++ name (string)
++ plan (string)
++ provider (string)
++ total_cost (string) -- money
+
+## ProfileStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## SearchAggregationCount
+
++ count (number)
++ value (string)
+
+## PersonalContact
+
++ email (string)
++ emergency (EmergencyContact)
++ mobile (string)
++ phone (string)
++ profile (object) -- Profile
++ updated_contacts (string)
+
+## PublicProfile
+
++ avatar (Thumbnail)
++ id (string) -- id
++ name (string)
++ position_level (PublicPositionLevel)
+
+## ChildCare
+
++ discount_percentage (number)
++ id (string) -- id
++ name (string)
+
+## Constant
+
++ code (string)
++ label (string)
++ name (string)
+
+## EnumDescriptions
+
++ absence_status (AbsenceStatusDescription)
++ absence_type (AbsenceTypeDescription)
++ access_level (AccessLevelDescription)
++ contact_type (ContactTypeDescription)
++ employment_contract (EmploymentContractDescription)
++ meal_allowance_discount (MealAllowanceDiscountDescription)
++ meal_allowance_periodicity (MealAllowancePeriodicityDescription)
++ meal_allowance_type (MealAllowanceTypeDescription)
++ notification_contact_label (string)
++ notification_topic_type (NotificationTopicTypeDescription)
++ payment_method (PaymentMethodDescription)
++ payment_status (PaymentStatusDescription)
++ paystub_capability (PaystubCapabilityDescription)
++ probation_periods (ProbationPeriodsDescription)
++ profile_access_situation (ProfileAccessSituationDescription)
++ profile_benefit_status (ProfileBenefitStatusDescription)
++ profile_status (ProfileStatusDescription)
++ salary_period (SalaryPeriodDescription)
++ street_type (StreetTypeDescription)
++ transport_type (TransportTypeDescription)
++ verification_status (VerificationStatusDescription)
++ weekday (WeekdayDescription)
++ work_period_status (WorkPeriodStatusDescription)
++ workday_entry_type (WorkdayEntryTypeDescription)
++ workday_history_action (WorkdayHistoryActionDescription)
++ workday_status (WorkdayStatusDescription)
++ workload_type (WorkloadTypeDescription)
++ xerpa_plan (XerpaPlanDescription)
+
+## EntriesSummary
+
++ disregarded_entries (WorkdayEntry)
++ entry_pairs (EntriesSummaryEntryPair)
+
+## MealAllowance
+
++ amount (string) -- money
++ discount_amount (string) -- money
++ discount_type (string)
++ id (string) -- id
++ name (string)
++ periodicity (string)
++ provider (MealAllowanceProvider)
++ type (string)
+
+## WorkdayWorkload
+
++ load_in_minutes (number)
++ periods (WorkloadDescriptionPeriod)
++ regimen (string)
+
+## CustomIntegrationFieldCategory
+
++ name (string)
++ type (string)
+
+## BusinessUnit
+
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
+
+## WorkloadSchedule
+
++ description (WorkloadDescription)
++ load_in_minutes (number)
++ nuclear_descriptions (WorkloadNuclearDescription)
++ regimen (string)
+
+## YearMonth
+
++ month (string) -- month
++ year (number)
+
+## AbsenceStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## ProfileMissingLastDay
+
++ pagination_token (string) -- id
++ profile (Profile)
+
+## PaystubCapabilityInfo
+
++ capability (string)
++ enabled (boolean)
+
+## Workload
+
++ company (object) -- Company
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
++ schedule (WorkloadSchedule)
++ type (string)
+
+## Offboard
+
++ other_attachments (object)
++ payment_attachments (object)
+
+## WorkloadDescription
+
++ id (string) -- id
++ periods (WorkloadDescriptionPeriod)
++ weekdays (string)
+
+## PaystubStatisticValue
+
++ entry (Identifier)
++ value (number)
+
+## ProfileBenefitStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## VerificationStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## SignatureResult
+
++ results (WorkPeriodProfile)
++ total_hits (number)
+
+## MealAllowanceDiscountDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## MissingProfiles
+
++ results (DanglingPis)
++ total_hits (number)
+
+## PaymentStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## CostCenter
+
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
+
+## ContactPreference
+
++ contact (Contact)
++ id (string) -- id
++ topic (string)
+
+## RootSubscriptionType
+
++ generating_attendance_records (Progress)
++ work_period_overview (WorkPeriodSubscriptionOverviewWithSummaries)
++ work_period_overview_by_department (WorkPeriodSubscriptionOverviewByDepartment)
++ work_period_overview_by_manager (WorkPeriodSubscriptionOverviewByManager)
++ work_period_profile_overview (WorkPeriodSubscriptionProfile)
+
+## WorkPeriodSubscriptionOverviewByDepartment
+
++ department (Department)
++ overview (WorkPeriodSubscriptionOverview)
++ summaries (WorkPeriodSubscriptionProfile)
+
+## UploadUrl
+
++ url (string)
+
+## BitmapAttachment
+
++ etag (string)
++ height (number)
++ id (string)
++ mime (string)
++ mtime (string) -- datetime
++ name (string)
++ type (string)
++ url (string)
++ width (number)
+
+## Position
+
++ id (string) -- id
++ levels (PositionLevel)
++ name (string)
+
+## Viewer
+
++ profile (Profile)
+
+## Contact
+
++ id (string) -- id
++ label (string)
++ profile (object) -- Profile
++ type (string)
++ value (string)
++ verification_status (string)
++ verified (boolean)
+
+## AccessLevelDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Token
+
++ id (string) -- id
++ token (string) -- id
+
+## AggregationBucketMissing
+
++ id (string) -- id
++ name (string)
+
+## ProfileSearchResult
+
++ profiles (Profile)
++ total_hits (number)
+
+## WorkPeriodListOverview
+
++ profiles_count (number)
++ profiles_with_absences_count (number)
+
+## Cbo
+
++ code (string)
++ id (string) -- id
++ name (string)
+
+## SalaryPeriodDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## ProfileWorkPeriod
+
++ archived_on (string) -- date
++ end_on (string) -- date
++ id (string) -- id
++ overview (ProfileWorkPeriodOverview)
++ signature (WorkPeriodProfile)
++ start_on (string) -- date
++ status (string)
++ workdays (Workday)
+
+## UploadInfo
+
++ field_name (string)
++ handle (string)
+
+## DanglingPis
+
++ pagination_token (string) -- id
++ pis (string) -- id
+
+## ProfilePhone
+
++ branch (string)
++ business (string)
++ personal (string)
+
+## Identifier
+
++ key (string) -- id
++ label (string)
+
+## MutatePositionReply
+
++ errors (Error)
++ positions (Position)
+
+## WorkdayEntryTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## StreetTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## WorkloadNuclearDescription
+
++ id (string) -- id
++ interval_duration_in_minutes (number)
++ load_in_minutes (number)
++ num_intervals (number)
++ outer_checkin (string) -- time
++ outer_checkout (string) -- time
++ tolerance_in_minutes (number)
++ weekdays (string)
+
+## PaystubCapabilityDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## IntegrationField
+
++ counts (IntegrationCount)
++ incomplete_objects (object)
++ name (string)
++ type (string)
+
+## NotificationTopicTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## WorkPeriodConfig
+
++ incomplete_profiles (IncompleteProfiles)
++ missing_profiles (MissingProfiles)
++ profiles_missing_last_day (ProfilesMissingLastDay)
+
+## WorkdayStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## TimeClock
+
++ company (Company)
++ name (string)
++ serial_number (string)
+
+## ProfileWorkPeriodOverview
+
++ time_balance_in_minutes (number)
++ workdays_missed_count (number)
++ workdays_pending_approval_count (number)
++ workdays_pending_review_count (number)
+
+## Statistics
+
++ headcount (Headcount)
++ paystub (PaystubStatistics)
++ turnover (Turnover)
++ year_month_bounds (YearMonth)
+
+## PositionLevel
+
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
++ position (Position)
+
+## Absence
+
++ attachment (Attachment)
++ comments (Thread)
++ description (string)
++ duration_in_minutes (number)
++ finish_date (string) -- date
++ finish_time (string) -- time
++ guid (string) -- id
++ id (string) -- id
++ profile (object) -- Profile
++ start_date (string) -- date
++ start_time (string) -- time
++ status (string)
++ type (string)
++ viewer_can_change_status (boolean)
++ viewer_can_edit (boolean)
+
+## WorkPeriodSubscriptionOverviewWithSummaries
+
++ overview (WorkPeriodSubscriptionOverview)
++ summaries (WorkPeriodSubscriptionProfile)
+
+## IncompleteProfiles
+
++ results (WorkPeriodIncompleteProfile)
++ total_hits (number)
+
+## ProfileChildCare
+
++ chosen (ChildCare)
++ status (string)
+
+## RootQueryType
+
++ company (Company)
++ enum_descriptions (EnumDescriptions)
++ profile (Profile)
++ viewer (Viewer)
+
+## WorkloadTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## TurnoverResult
+
++ value (number)
+
+## Union
+
++ abbreviation (string)
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
+
+## PdfAttachment
+
++ aspect (number)
++ etag (string)
++ id (string)
++ mime (string)
++ mtime (string) -- datetime
++ name (string)
++ pages (number)
++ type (string)
++ url (string)
+
+## AbsenceTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## MealAllowanceProvider
+
++ name (string)
+
+## Turnover
+
++ dataset (TurnoverAggregation)
++ known_departments (Identifier)
+
+## CompanyBenefits
+
++ child_cares (ChildCare)
++ dental_insurances (DentalInsurance)
++ health_insurances (HealthInsurance)
++ life_insurances (LifeInsurance)
++ meal_allowances (MealAllowance)
++ transports (Transport)
+
+## WorkPeriodOverview
+
++ profiles_count (number)
++ profiles_done_count (number)
++ profiles_on_offboard_count (number)
++ profiles_on_vacation_count (number)
++ profiles_pending_count (number)
++ profiles_with_absences_done_count (number)
++ profiles_with_absences_pending_count (number)
++ profiles_with_workdays_done_count (number)
++ profiles_with_workdays_pending_count (number)
++ time_balance_in_minutes (number)
+
+## Billing
+
++ history (object)
++ payment (Payment)
++ plan (string)
++ plan_identifier (string)
+
+## CustomIntegrationExport
+
++ custom_integration (CustomIntegration)
++ file_path (string)
++ id (string) -- id
++ incomplete_profiles (IncompleteProfile)
++ integration (object)
++ profiles (Profile)
+
+## SearchAggregation
+
++ counts (SearchAggregationCount)
++ field_name (string)
+
+## EmergencyContact
+
++ name (string)
++ phone (string)
++ relationship (string)
+
+## WorkdayHistory
+
++ what (string)
++ when (string) -- naivedatetime
++ who (PublicProfile)
+
+## ContactTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## WorkdayEntry
+
++ date (string) -- date
++ edit_reason (string)
++ id (string) -- id
++ time (string) -- time
++ type (string)
+
+## ExpectedEntry
+
++ date (string) -- date
++ time (string) -- time
+
+## Department
+
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
+
+## LifeInsurance
+
++ id (string) -- id
++ name (string)
++ plan (string)
++ provider (string)
+
+## MealAllowanceTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Role
+
++ access (string)
++ company (Company)
+
+## Comment
+
++ author (PublicProfile)
++ id (string) -- id
++ inserted_at (string) -- datetime
++ message (string)
++ thread (Thread)
+
+## EntryPosition
+
++ entries (WorkdayEntry)
++ expected (ExpectedEntry)
+
+## ProfileWorkPeriodListView
+
++ end_on (string) -- date
++ id (string) -- id
++ start_on (string) -- date
+
+## ProfileLifeInsurance
+
++ chosen (LifeInsurance)
++ status (string)
+
+## DominioCompanyExternalAssociations
+
++ branch (string)
++ id (string)
++ service (string)
++ simples (string)
+
+## Transport
+
++ id (string) -- id
++ name (string)
++ type (string)
+
+## ProfileTransport
+
++ card_description (string)
++ description (string)
++ status (string)
++ total_cost (string) -- money
++ type (string)
+
+## ProfileMealAllowance
+
++ chosen (MealAllowance)
++ status (string)
+
+## PaystubFilePage
+
++ id (string) -- id
+
+## WorkPeriodFilterResult
+
++ absences (Absence)
++ profile (Profile)
++ time_balance_in_minutes (number)
++ workdays (Workday)
+
+## CustomIntegration
+
++ company (Company)
++ fields (CustomIntegrationField)
++ id (string) -- id
+
+## WorkPeriodSubscriptionOverview
+
++ profiles_count (number)
++ profiles_done_count (number)
++ profiles_on_offboard_count (number)
++ profiles_on_vacation_count (number)
++ profiles_pending_count (number)
++ profiles_with_absences_done_count (number)
++ profiles_with_absences_pending_count (number)
++ profiles_with_workdays_done_count (number)
++ profiles_with_workdays_pending_count (number)
++ time_balance_in_minutes (number)
+
+## CustomCompanyIntegration
+
++ active (boolean)
++ associable_fields (IntegrationField)
++ company (Company)
++ counts (IntegrationCount)
++ custom_integration (CustomIntegration)
++ description (string)
++ fields (IntegrationField)
++ name (string)
++ type (string)
+
+## DefaultCompanyIntegration
+
++ active (boolean)
++ associable_fields (IntegrationField)
++ company (Company)
++ counts (IntegrationCount)
++ description (string)
++ fields (IntegrationField)
++ name (string)
++ type (string)
+
+## TokenDescription
+
++ company (object) -- Company
++ description (string)
++ id (string) -- id
++ inserted_at (string) -- naivedatetime
+
+## ExternalAssociations
+
++ custom (string)
++ dominio (string)
++ totvs_rm_labore (string)
+
+## Workday
+
++ absences (Absence)
++ absences_time_in_minutes (number)
++ adjustment_version (number)
++ can_be_approved (boolean)
++ comments (Thread)
++ entries (WorkdayEntry)
++ entries_positions (EntryPosition)
++ entries_summary (EntriesSummary)
++ history (WorkdayHistory)
++ id (string) -- id
++ is_holiday (boolean)
++ is_in_workload (boolean)
++ is_vacation (boolean)
++ next_pending_manager_review (Workday)
++ next_pending_user_review (Workday)
++ overtime (boolean)
++ reference_date (string) -- date
++ status (string)
++ summary_message (string)
++ time_balance_in_minutes (number)
++ undertime (boolean)
++ viewer_can_adjust (boolean)
++ viewer_can_approve (boolean)
++ work_period (ProfileWorkPeriod)
++ workload (WorkdayWorkload)
+
+## WorkPeriodOverviewByDepartment
+
++ department (object)
++ overview (WorkPeriodOverview)
+
+## TimeClockImportFileOverview
+
++ entries_count (number)
++ entries_end_on (string) -- date
++ entries_start_on (string) -- date
++ profiles_not_found_count (number)
++ time_clock (TimeClock)
+
+## ProfileAccessSituationDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Office
+
++ address (Address)
++ company (object) -- Company
++ external_associations (ExternalAssociations)
++ id (string) -- id
++ name (string)
+
+## EnumAggregation
+
++ bucket (Identifier)
++ count (number)
+
+## CustomIntegrationField
+
++ category (CustomIntegrationFieldCategory)
++ name (string)
++ selected (boolean)
++ type (string)
+
+## PublicPosition
+
++ id (string) -- id
++ name (string)
+
+## Payment
+
++ method (string)
++ next_payment_due (string) -- date
+
+## WorkPeriodListView
+
++ end_on (string) -- date
++ id (string) -- id
++ overview (WorkPeriodListOverview)
++ start_on (string) -- date
++ status (string)
+
+## DefaultIntegrationExport
+
++ dependents_file_path (string)
++ file_path (string)
++ id (string) -- id
++ incomplete_profiles (IncompleteProfile)
++ integration (object)
++ non_exportable_profiles (Profile)
++ profiles (Profile)
++ renapse_bank_file_path (string)
+
+## Country
+
++ code (string)
++ id (string) -- id
++ name (string)
+
+## Attachment
+
++ name (string)
++ object_id (string)
++ thumbnail (Thumbnail)
+
+## DimepKairosCompanyExternalAssociations
+
++ password (string)
++ username (string)
+
+## EntriesSummaryEntryPair
+
++ in (WorkdayEntry)
++ out (WorkdayEntry)
+
+## State
+
++ code (string)
++ country (Country)
++ id (string) -- id
++ name (string)
+
+## PaymentMethodDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Thumbnail
+
++ url (string)
+
+## FilteredWorkPeriod
+
++ overview (WorkPeriodOverview)
++ treatment (WorkPeriodFilterResults)
+
+## PaystubStatistics
+
++ available_departments (Identifier)
++ dataset (PaystubStatisticDataset)
++ year_month_bounds (YearMonth)
+
+## KenobyIntegration
+
++ active (boolean)
++ associable_fields (IntegrationField)
++ company (Company)
++ counts (IntegrationCount)
++ description (string)
++ fields (IntegrationField)
++ name (string)
++ token (Token)
++ type (string)
+
+## Thread
+
++ id (string) -- id
++ messages (Comment)
+
+## TimeClockImportResult
+
++ id (string) -- id
++ import_file_overview (TimeClockImportFileOverview)
++ pending (boolean)
++ profiles_not_found_count (number)
+
+## WorkPeriodStatusDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## PaymentCreditCard
+
++ due (string) -- date
++ status (string)
+
+## VerificationCode
+
++ contact_id (string) -- id
++ profile (Profile)
+
+## BusinessContact
+
++ branch (string)
++ email (string)
++ mobile (string)
++ phone (string)
++ profile (object) -- Profile
++ updated_contacts (string)
+
+## TransportTypeDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## PaystubStatisticDataset
+
++ department_id (string)
++ values (PaystubStatisticValue)
++ year_month (YearMonth)
+
+## WorkPeriodIncompleteProfile
+
++ pagination_token (string) -- id
++ profile (Profile)
+
+## RootMutationType
+
++ token_delete (Token)
++ set_last_day (WorkPeriodConfig)
++ upload_begin (UploadInfo)
++ work_period_accept_all (WorkPeriodAcceptAllReply)
++ work_period_profile_signatures (WorkPeriodProfile)
++ create_company_integration (object)
++ personal_contact (PersonalContact)
++ reset_vacations (Company)
++ set_company_plan (Company)
++ grant_access (Profile)
++ business_unit (BusinessUnit)
++ comment_insert (Comment)
++ alter_positions (MutatePositionReply)
++ api_token_generate (ApiToken)
++ workload (Workload)
++ update_external_associations (object)
++ delete_company_integration (Company)
++ integration_export (DefaultIntegrationExport)
++ make_paying_company (Company)
++ workload_delete (Workload)
++ cost_center (CostCenter)
++ contact_preference (ContactPreference)
++ contact_verification (Contact)
++ api_token_delete (TokenDescription)
++ upload_done (Attachment)
++ delete_paystub_file_page (PaystubFilePage)
++ generate_upload_url (UploadUrl)
++ request_contact_verification_code (VerificationCode)
++ manual_invite_profiles (Profile)
++ invite_profiles (Profile)
++ update_company (Company)
++ work_period_close (WorkPeriod)
++ upload_delete (UploadDeleteReply)
++ absence (Absence)
++ change_username (Profile)
++ time_clock_import_create (TimeClockImportResult)
++ absence_delete (Absence)
++ union (Union)
++ time_clock_import_commit (TimeClockImportResult)
++ custom_integration_export (CustomIntegrationExport)
++ department (Department)
++ profile_contract_update (Profile)
++ work_period_archive (WorkPeriod)
++ custom_integration (CustomCompanyIntegration)
++ set_paystub_capability (Company)
++ comment_delete (Comment)
++ office_delete (Office)
++ office (Office)
++ reset_profile_vacation (Profile)
++ make_accountant (Company)
++ business_contact (BusinessContact)
++ work_period_profile_config (WorkPeriodConfig)
++ token_generate (Token)
++ contact_preference_delete (ContactPreference)
++ workday_adjust (Workday)
++ complete_profile_information (WorkPeriodConfig)
+
+## WeekdayDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Headcount
+
++ age (EnumAggregation)
++ count (number)
++ department (EnumAggregation)
++ education_degree (EnumAggregation)
++ employment_contract (EnumAggregation)
++ gender (EnumAggregation)
++ marital_status (EnumAggregation)
++ skin_color (EnumAggregation)
++ year_month (YearMonth)
+
+## WorkPeriodSubscriptionProfile
+
++ profile_id (string) -- id
++ time_balance_in_minutes (number)
+
+## EmploymentContractDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## IntegrationCount
+
++ associated (number)
++ total (number)
+
+## City
+
++ id (string) -- id
++ name (string)
++ state (State)
+
+## PublicPositionLevel
+
++ id (string) -- id
++ name (string)
++ position (PublicPosition)
+
+## Error
+
++ key (string)
++ msg (string)
+
+## Company
+
++ work_period (WorkPeriod)
++ business_units (BusinessUnit)
++ id (string) -- id
++ viewer_can_view_dashboards (boolean)
++ viewer_can_invite (boolean)
++ integrations (object)
++ positions (Position)
++ integration_export (DefaultIntegrationExport)
++ viewer_can_view_billing (boolean)
++ workloads (Workload)
++ is_accountant (boolean)
++ viewer_can_view_absences (boolean)
++ profile_search (ProfileSearchResult)
++ viewer_can_administer (boolean)
++ has_sent_paystubs (boolean)
++ viewer_can_census (boolean)
++ work_period_config (WorkPeriodConfig)
++ statistics (Statistics)
++ viewer_can_view_onboardings (boolean)
++ viewer_can_view_vacations (boolean)
++ viewer_can_view_offboardings (boolean)
++ viewer_can_view_statistics (boolean)
++ billing (Billing)
++ custom_integration_export (CustomIntegrationExport)
++ custom_fields (CustomField)
++ api_tokens (TokenDescription)
++ departments (Department)
++ department (Department)
++ has_automatic_time_clock_import (boolean)
++ paystub_capabilities (PaystubCapabilityInfo)
++ external_associations (CompanyExternalAssociations)
++ work_periods (WorkPeriodListView)
++ unions (Union)
++ viewer_can_view_paystubs (boolean)
++ offices (Office)
++ benefits (CompanyBenefits)
++ viewer_can_view_users (boolean)
++ last_timeclock_import (string) -- naivedatetime
++ profile_search_aggregation (SearchAggregation)
++ viewer_can_import (boolean)
++ cost_centers (CostCenter)
++ name (string)
++ viewer_can_view_work_periods (boolean)
+
+## MealAllowancePeriodicityDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## XerpaPlanDescription
+
++ label (string)
++ name (string)
++ value (string)
+
+## Account
+
++ role (Role)
++ roles (Role)
+
+## ProfileHealthInsurance
+
++ chosen (HealthInsurance)
++ status (string)
+
+## WorkPeriodSubscriptionOverviewByManager
+
++ manager (Profile)
++ overview (WorkPeriodSubscriptionOverview)
++ summaries (WorkPeriodSubscriptionProfile)
+
