@@ -57,7 +57,31 @@ valor obtido no passo anterior):
   Authorization: Bearer TOKEN
 ```
 
-# API Playground
+# Política de depreciação
+
+Nossa _API_ ainda não está completa e por isso está em constante
+mudança. A maior parte das alterações adiciona campos, o que
+geralmente não requer nenhuma mudança de código dos usuários da _API_.
+
+Nos casos que a mudança quebra o contrato, removendo ou modificando um
+campo, ela é feita um duas fases. O novo campo é adicionado e o campo
+antigo é marcado como _deprecated_. Eles coexistem por um período de
+no mínimo 3 meses, após este período o campo _deprecated_ é
+removido. A ideia é permitir que usuários tenham tempo para ajustar o
+código que dependa de campos descontinuados.
+
+Campos marcados como _deprecated_ não aparecem na documentação da API
+porém continuam funcionando normalmente. O _API Playground_ permite
+inspecionar o _schema_ e identificar os campos marcados como
+_deprecated_ bem como a sua documentação, caso exista.
+
+Ainda não existe nenhum mecanismo formal de notificação caso o usuário
+da API esteja usando campos descontinuados.  Hoje a única ferramenta
+disponível é inspecionar manualmente `_API Playground_` ou fazendo
+[solicitações de
+introspecção](http://graphql.org/learn/introspection/) para a _API_.
+
+# Api Playground
 
 [API Playground](https://sandbox.xerpa.com.br/api/playground) é uma
 instância do [graphiql](https://github.com/graphql/graphiql) que
@@ -1620,4 +1644,3 @@ Dados da empresa
 + manager (Profile)
 + overview (WorkPeriodSubscriptionOverview)
 + summaries (WorkPeriodSubscriptionProfile)
-
