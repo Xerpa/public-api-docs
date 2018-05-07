@@ -21,7 +21,7 @@ To test locally, install the [Apiary Client](https://github.com/apiaryio/apiary-
 
 ```bash
 $ gem install apiaryio
-$ apiaryio preview --server --watch
+$ apiary preview --server --watch
 ```
 
 This will start a server on `localhost:8080` by default.
