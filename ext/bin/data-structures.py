@@ -7,6 +7,9 @@ import requests
 def read_api_token():
     return(os.environ["lukla_api_token"])
 
+def lukla_url():
+    return os.environ.get("lukla_url", "https://sandbox.xerpa.com.br")
+
 def introspect(endpoint):
     headers = {
         "authorization": "Bearer " + read_api_token(),
@@ -191,6 +194,6 @@ def find_cycles(schema):
     return(cycles)
 
 if (__name__ == "__main__"):
-    schema = map_schema(introspect("https://sandbox.xerpa.com.br"))
+    schema = map_schema(introspect(lukla_url()))
     cycles = find_cycles(schema)
     print(format_schema(schema, cycles))

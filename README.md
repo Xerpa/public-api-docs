@@ -15,6 +15,14 @@ $ env lukla_api_token=LUKLA_API_TOKEN bin_python=$HOME/pyenv/xerpa/bin/python ex
 
 Where `LUKLA_API_TOKEN` is the Lukla Public API Token for any company in [Sandbox](https://sandbox.xerpa.com.br).
 
+To introspect your local server, say, at `http://localhost:4000`, use:
+
+```bash
+$ env lukla_api_token=LUKLA_API_TOKEN lukla_url=http://localhost:4000 bin_python=$HOME/pyenv/xerpa/bin/python ext/bin/add-data-structures
+```
+
+If `lukla_url` is not given, `https://sandbox.xerpa.com.br` will be used.
+
 # Local testing
 
 To test locally, install the [Apiary Client](https://github.com/apiaryio/apiary-client) gem:
@@ -25,3 +33,9 @@ $ apiary preview --server --watch
 ```
 
 This will start a server on `localhost:8080` by default.
+
+To select another port:
+
+```bash
+$ apiary preview --server --watch --port 9090
+```
